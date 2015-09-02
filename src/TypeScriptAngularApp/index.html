@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Angular App with TypeScript</title>
+</head>
+<body>
+    <div class="main" main-content></div>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+
+    <script src="App/App.js"></script>
+    <script src="App/components/mainContent/mainContent.js"></script>
+    <script>
+        angular.element(document).ready(function () {
+            angular.bootstrap(document, ["app"]);
+        });
+    </script>
+</body>
+</html>
