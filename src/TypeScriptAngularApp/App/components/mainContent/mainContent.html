@@ -1,4 +1,19 @@
 ﻿<ul>
-    <li>Username: <input type="text" id="username" name="username" placeholder="{{username}}" /></li>
-    <li>Password: <input type="password" id="password" name="password" placeholder="{{password}}" /></li>
+    <li>
+        Title:
+        <select id="salutation" name="salutation">
+            <option ng-repeat="salutation in model.salutations" value="{{salutation.value}}">{{salutation.text}}</option>
+        </select>
+    </li>
+    <li>
+        Name:
+        <input type="text" id="name" name="name" placeholder="Enter your name" />
+    </li>
+    <li>
+        Email:
+        <input type="email" id="email" name="email" placeholder="Enter your email" />
+    </li>
+    <li>
+        <input type="submit" id="submit" name="submit" />
+    </li>
 </ul>

@@ -1,11 +1,14 @@
 ﻿/// <reference path="../../../Scripts/typings/angularjs/angular.d.ts" />
+/// <reference path="../../models/registrationModel.ts"/>
 
 "use strict";
 
 module app.angular.Directives {
+    import RegistrationModel = app.angular.Models.RegistrationModel;
+    import Salutation = app.angular.Models.Salutation;
+
     export interface IMainContentScope extends ng.IScope {
-        username: string;
-        password: string;
+        model: angular.Models.RegistrationModel;
     }
 
     export class MainContent implements ng.IDirective {
@@ -15,8 +18,13 @@ module app.angular.Directives {
         templateUrl = "/App/components/mainContent/mainContent.html";
 
         controller($scope: IMainContentScope) {
-            $scope.username = "Enter username";
-            $scope.password = "Enter password";
+            $scope.model = new RegistrationModel();
+            $scope.model.salutations = [
+                new Salutation("Mr", "Mr"),
+                new Salutation("Ms", "Ms"),
+                new Salutation("Mrs", "Mrs"),
+                new Salutation("Mx", "Mx")
+            ];
         }
     }
 }
