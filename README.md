@@ -1,4 +1,16 @@
-# Sample Web APP using Web API and Angular with TypeScript #
+# Sample Angular App using TypeScript and Web API #
+
+This is a sample code for an Angular App using TypeScript and Web API.
+
+
+## Structure ##
+
+* [x] Static Web App
+* [x] Static Angular App with TypeScript
+* [ ] Dynamic Angular App with TypeScript and Web API
+* [ ] Dynamic Angular App with TypeScript and Web API applying HAL
+* [ ] Dynamic Angular App with TypeScript and Web API applying HAL and Swagger
+* [ ] Dynamic Angular App with TypeScript and Web API applying HAL, Swagger, Event Sourcing and CQRS
 
 
 ## Contribution ##
