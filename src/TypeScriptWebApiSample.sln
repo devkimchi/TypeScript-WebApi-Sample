@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptAngularApp", "Typ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticWebApp", "StaticWebApp\StaticWebApp.csproj", "{2ECAC3D9-2E25-4CF6-8396-36BAD0289D01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptAngularWebApiApp", "TypeScriptAngularWebApiApp\TypeScriptAngularWebApiApp.csproj", "{515E8F4E-5272-4595-A168-0B3CF2956098}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{45459510-92CD-4457-98B5-5F43E3EC4F76}"
+	ProjectSection(SolutionItems) = preProject
+		Settings.StyleCop = Settings.StyleCop
+		TypeScriptWebApiSample.sln.DotSettings = TypeScriptWebApiSample.sln.DotSettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +29,10 @@ Global
 		{2ECAC3D9-2E25-4CF6-8396-36BAD0289D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ECAC3D9-2E25-4CF6-8396-36BAD0289D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ECAC3D9-2E25-4CF6-8396-36BAD0289D01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{515E8F4E-5272-4595-A168-0B3CF2956098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{515E8F4E-5272-4595-A168-0B3CF2956098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{515E8F4E-5272-4595-A168-0B3CF2956098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{515E8F4E-5272-4595-A168-0B3CF2956098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
