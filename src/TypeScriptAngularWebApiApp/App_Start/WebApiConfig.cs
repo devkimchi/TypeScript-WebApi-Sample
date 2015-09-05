@@ -1,23 +1,36 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Web.Http;
 
 using Newtonsoft.Json.Serialization;
+
+using Owin;
 
 namespace TypeScriptAngularWebApiApp
 {
     /// <summary>
-    /// This represents the configuration entity for Web API.
+    /// This represents the config entity for Web API.
     /// </summary>
     public static class WebApiConfig
     {
         /// <summary>
-        /// Registers Web API configurations.
+        /// Configures the Web API.
         /// </summary>
-        /// <param name="config">
-        /// The <see cref="HttpConfiguration" /> instance.
+        /// <param name="builder">
+        /// The <see cref="IAppBuilder" /> instance.
         /// </param>
-        public static void Register(HttpConfiguration config)
+        /// <exception cref="ArgumentNullException">
+        /// Throws when either <c>builder</c> or <c>container</c> is null.
+        /// </exception>
+        public static void Configure(IAppBuilder builder)
         {
-            // Web API routes
+            if (builder == null)
+            {
+                throw new ArgumentNullException("builder");
+            }
+
+            var config = new HttpConfiguration();
+
+            // Routes
             config.MapHttpAttributeRoutes();
 
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
@@ -26,6 +39,8 @@ namespace TypeScriptAngularWebApiApp
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional });
+
+            builder.UseWebApi(config);
         }
     }
 }
