@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Http;
 
-using Newtonsoft.Json.Serialization;
+using Aliencube.WebApi.Hal.Configs;
 
 using Owin;
 
@@ -30,10 +30,9 @@ namespace TypeScriptAngularWebApiAppHal
 
             var config = new HttpConfiguration();
 
-            // Routes
             config.MapHttpAttributeRoutes();
 
-            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.ConfigHalFormatter();
 
             builder.UseWebApi(config);
         }

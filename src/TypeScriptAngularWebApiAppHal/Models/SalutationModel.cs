@@ -1,19 +1,21 @@
-﻿namespace TypeScriptAngularWebApiAppHal.Models
+﻿using Aliencube.WebApi.Hal.Resources;
+
+namespace TypeScriptAngularWebApiAppHal.Models
 {
     /// <summary>
     /// This represents the entity for salutation.
     /// </summary>
-    public class Salutation
+    public class SalutationModel : LinkedResource
     {
         /// <summary>
-        /// Initialises a new instance of the <see cref="Salutation" /> class.
+        /// Initialises a new instance of the <see cref="SalutationModel" /> class.
         /// </summary>
-        public Salutation()
+        public SalutationModel()
         {
         }
 
         /// <summary>
-        /// Initialises a new instance of the <see cref="Salutation" /> class.
+        /// Initialises a new instance of the <see cref="SalutationModel" /> class.
         /// </summary>
         /// <param name="text">
         /// Salutation text.
@@ -21,7 +23,7 @@
         /// <param name="value">
         /// Salutation value.
         /// </param>
-        public Salutation(string text, string value)
+        public SalutationModel(string text, string value)
         {
             this.Text = text;
             this.Value = value;

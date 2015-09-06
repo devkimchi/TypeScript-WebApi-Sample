@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Routing;
+
+using Aliencube.WebApi.Hal.Extensions;
+using Aliencube.WebApi.Hal.Resources;
 
 using TypeScriptAngularWebApiAppHal.Models;
 
@@ -12,28 +16,48 @@ namespace TypeScriptAngularWebApiAppHal.Controllers
     [RoutePrefix("api/salutations")]
     public class SalutationsController : ApiController
     {
+        private const string SalutationsRouteName = "Salutations";
+
         /// <summary>
-        /// Gets the list of <see cref="Salutation" />s.
+        /// Gets the list of links for salutations for entry.
+        /// </summary>
+        /// <param name="urlHelper">Url helper</param>
+        /// <returns>Returns the list of <see cref="Link" /> objects.</returns>
+        public static IEnumerable<Link> FindLinks(UrlHelper urlHelper)
+        {
+            var links = new List<Link>()
+                            {
+                                new Link() { Rel = "salutations", Href = urlHelper.Route(SalutationsRouteName, new { }) },
+                            };
+
+            return links;
+        }
+
+        /// <summary>
+        /// Gets the list of <see cref="SalutationModel" />s.
         /// </summary>
         /// <returns>
-        /// Returns the list of <see cref="Salutation" />s.
+        /// Returns the list of <see cref="SalutationModel" />s.
         /// </returns>
-        [Route("")]
-        public virtual async Task<List<Salutation>> Get()
+        [Route("", Name = SalutationsRouteName)]
+        public virtual async Task<SalutationCollectionModel> Get()
         {
-            var salutations = new List<Salutation>();
+            SalutationCollectionModel collection = null;
             await Task.Run(() =>
                 {
-                    salutations = new List<Salutation>()
-                                      {
-                                          new Salutation("Mr", "Mr"),
-                                          new Salutation("Mrs", "Mrs"),
-                                          new Salutation("Ms", "Ms"),
-                                          new Salutation("Mx", "Mx"),
-                                      };
+                    var salutations = new List<SalutationModel>()
+                                          {
+                                              new SalutationModel("Mr", "Mr"),
+                                              new SalutationModel("Mrs", "Mrs"),
+                                              new SalutationModel("Ms", "Ms"),
+                                              new SalutationModel("Mx", "Mx"),
+                                          };
+
+                    collection = new SalutationCollectionModel(salutations);
                 });
 
-            return salutations;
+            collection.AddLink(new Link() { Rel = "self", Href = this.Url.Route(SalutationsRouteName, new { }) });
+            return collection;
         }
     }
 }
