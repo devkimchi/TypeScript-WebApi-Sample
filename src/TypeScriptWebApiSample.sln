@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{45459510-9
 		TypeScriptWebApiSample.sln.DotSettings = TypeScriptWebApiSample.sln.DotSettings
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptAngularWebApiAppHal", "TypeScriptAngularWebApiAppHal\TypeScriptAngularWebApiAppHal.csproj", "{0713FCD9-ABD0-4084-AA1A-5A256475EE66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{515E8F4E-5272-4595-A168-0B3CF2956098}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{515E8F4E-5272-4595-A168-0B3CF2956098}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{515E8F4E-5272-4595-A168-0B3CF2956098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0713FCD9-ABD0-4084-AA1A-5A256475EE66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0713FCD9-ABD0-4084-AA1A-5A256475EE66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0713FCD9-ABD0-4084-AA1A-5A256475EE66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0713FCD9-ABD0-4084-AA1A-5A256475EE66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
