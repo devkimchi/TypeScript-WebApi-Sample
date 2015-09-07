@@ -4,8 +4,8 @@
 "use strict";
 
 module app.angular.Directives {
-    import RegistrationModel = app.angular.Models.RegistrationModel;
-    import Salutation = app.angular.Models.Salutation;
+    import RegistrationModel = angular.Models.RegistrationModel;
+    import Salutation = angular.Models.Salutation;
 
     export interface IMainContentScope extends ng.IScope {
         model: angular.Models.RegistrationModel;
