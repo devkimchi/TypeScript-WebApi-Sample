@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{45459510-9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptAngularWebApiAppHal", "TypeScriptAngularWebApiAppHal\TypeScriptAngularWebApiAppHal.csproj", "{0713FCD9-ABD0-4084-AA1A-5A256475EE66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptAngularWebApiAppHalSwagger", "TypeScriptAngularWebApiAppHalSwagger\TypeScriptAngularWebApiAppHalSwagger.csproj", "{8DC2B5CB-010F-4107-A53B-6D97DFF459DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{0713FCD9-ABD0-4084-AA1A-5A256475EE66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0713FCD9-ABD0-4084-AA1A-5A256475EE66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0713FCD9-ABD0-4084-AA1A-5A256475EE66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC2B5CB-010F-4107-A53B-6D97DFF459DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC2B5CB-010F-4107-A53B-6D97DFF459DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC2B5CB-010F-4107-A53B-6D97DFF459DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC2B5CB-010F-4107-A53B-6D97DFF459DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

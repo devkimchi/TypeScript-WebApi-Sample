@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Angular App with TypeScript and Web API, HAL and Swagger</title>
+</head>
+<body>
+    <div class="main" main-content></div>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+
+    <!-- Main entry for Angular -->
+    <script src="App/App.js"></script>
+
+    <!-- Register models -->
+    <script src="App/models/registrationModel.js"></script>
+
+    <!-- Register factories -->
+    <script src="App/factories/salutationsFactory.js"></script>
+
+    <!-- Register components/directives -->
+    <script src="App/components/mainContent/mainContent.js"></script>
+
+    <!-- Bind Angular to the page -->
+    <script>
+        angular.element(document).ready(function () {
+            angular.bootstrap(document, ["app"]);
+        });
+    </script>
+</body>
+</html>
