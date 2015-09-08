@@ -6,6 +6,7 @@ using System.Web.Http.Routing;
 using Aliencube.WebApi.Hal.Extensions;
 using Aliencube.WebApi.Hal.Resources;
 
+using TypeScriptAngularWebApiAppHalSwagger.Filters;
 using TypeScriptAngularWebApiAppHalSwagger.Models;
 
 namespace TypeScriptAngularWebApiAppHalSwagger.Controllers
@@ -34,12 +35,13 @@ namespace TypeScriptAngularWebApiAppHalSwagger.Controllers
         }
 
         /// <summary>
-        /// Gets the list of <see cref="SalutationModel" />s.
+        /// Gets the <see cref="SalutationCollectionModel" /> instance.
         /// </summary>
         /// <returns>
-        /// Returns the list of <see cref="SalutationModel" />s.
+        /// Returns the <see cref="SalutationCollectionModel" /> instance.
         /// </returns>
         [Route("", Name = SalutationsRouteName)]
+        [SwaggerOperation("My" + SalutationsRouteName)]
         public virtual async Task<SalutationCollectionModel> Get()
         {
             SalutationCollectionModel collection = null;

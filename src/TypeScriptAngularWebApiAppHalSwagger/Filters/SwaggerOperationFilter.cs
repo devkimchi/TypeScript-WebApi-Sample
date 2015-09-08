@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Http.Description;
 
+using Aliencube.WebApi.Hal.Helpers;
+using Aliencube.WebApi.Hal.Resources;
+
 using Swashbuckle.Swagger;
 
 namespace TypeScriptAngularWebApiAppHalSwagger.Filters
@@ -21,15 +24,37 @@ namespace TypeScriptAngularWebApiAppHalSwagger.Filters
         /// <param name="apiDescription"></param>
         public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
         {
-            var overwriteOperationId = apiDescription.ActionDescriptor
-                .GetCustomAttributes<SwaggerOperationAttribute>()
-                .Select(a => a.OperationId)
-                .FirstOrDefault();
+            var type = apiDescription.ActionDescriptor.ReturnType;
+            if (IsLinkedResourceCollectionType(type))
+            {
+                operation.responses.First().Value.schema.additionalProperties = new Schema() { type = "object" };
+            }
+
+            var overwriteOperationId =
+                apiDescription.ActionDescriptor.GetCustomAttributes<SwaggerOperationAttribute>()
+                    .Select(a => a.OperationId)
+                    .FirstOrDefault();
 
             if (overwriteOperationId != null)
             {
                 operation.operationId = overwriteOperationId;
             }
+        }
+        public static bool IsLinkedResourceCollectionType(Type type)
+        {
+            var typeToCheck = type;
+            while (typeToCheck != null && typeToCheck != typeof(object))
+            {
+                var currentType = typeToCheck.IsGenericType ? typeToCheck.GetGenericTypeDefinition() : typeToCheck;
+                if (currentType == typeof(LinkedResourceCollection<>))
+                {
+                    return true;
+                }
+
+                typeToCheck = typeToCheck.BaseType;
+            }
+
+            return false;
         }
     }
 }
