@@ -5,21 +5,25 @@
 module app.angular.Models {
     export class Link {
         href: string;
-        templated: boolean;
     }
 
-    export class SelfLink {
+    export class LinkCollection {
         self: Link;
+        salutations: Link;
     }
 
     export class Salutation {
         text: string;
         value: string;
-        _links: SelfLink;
+        _links: LinkCollection;
+    }
+
+    export class SalutationCollection {
+        salutations: Array<Salutation>;
     }
 
     export class RegistrationModel {
-        _embedded: Array<Salutation>;
-        _links: SelfLink;
+        _links: LinkCollection;
+        _embedded: SalutationCollection;
     }
 }

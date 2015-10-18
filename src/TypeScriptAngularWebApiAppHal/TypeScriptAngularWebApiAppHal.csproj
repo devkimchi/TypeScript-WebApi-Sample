@@ -131,6 +131,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Helpers\SalutationHelper.cs" />
     <Compile Include="Models\EntryModel.cs" />
     <Compile Include="Models\SalutationModel.cs" />
     <Compile Include="Models\SalutationCollectionModel.cs" />

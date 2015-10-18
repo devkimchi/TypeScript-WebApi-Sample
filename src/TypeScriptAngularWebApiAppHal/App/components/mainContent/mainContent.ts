@@ -5,7 +5,7 @@
 "use strict";
 
 module app.angular.Directives {
-    import RegistrationModel = angular.Models.RegistrationModel;
+    import RegiastrationModel = angular.Models.RegistrationModel;
 
     export interface IMainContentScope extends ng.IScope {
         model: angular.Models.RegistrationModel;
@@ -14,7 +14,9 @@ module app.angular.Directives {
     export class MainContent implements ng.IDirective {
         replace = true;
         restrict = "EA";
-        scope = {};
+        scope = {
+            model: new angular.Models.RegistrationModel()
+        };
         templateUrl = "/App/components/mainContent/mainContent.html";
 
         controller($scope: IMainContentScope, salutationsFactory: angular.Factories.SalutationsFactory) {
