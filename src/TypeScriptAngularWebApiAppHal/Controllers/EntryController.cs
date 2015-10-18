@@ -1,11 +1,9 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 
-using Aliencube.WebApi.Hal.Extensions;
-using Aliencube.WebApi.Hal.Resources;
-
 using TypeScriptAngularWebApiAppHal.Models;
+
+using WebApi.Hal;
 
 namespace TypeScriptAngularWebApiAppHal.Controllers
 {
@@ -32,8 +30,12 @@ namespace TypeScriptAngularWebApiAppHal.Controllers
                     model = new EntryModel();
                 });
 
-            model.AddLink(new Link() { Rel = "self", Href = this.Url.Route(EntryRouteName, new { }) });
-            model.AddLinks(SalutationsController.FindLinks(this.Url).ToList());
+            model.Links.Add(new Link() { Rel = "self", Href = this.Url.Route(EntryRouteName, new { }) });
+            foreach (var link in SalutationsController.FindLinks(this.Url))
+            {
+                model.Links.Add(link);
+            }
+
             return model;
         }
     }

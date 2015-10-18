@@ -1,12 +1,9 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 
-using Aliencube.WebApi.Hal.Extensions;
-using Aliencube.WebApi.Hal.Resources;
-
-using TypeScriptAngularWebApiAppHalSwagger.Filters;
 using TypeScriptAngularWebApiAppHalSwagger.Models;
+
+using WebApi.Hal;
 
 namespace TypeScriptAngularWebApiAppHalSwagger.Controllers
 {
@@ -19,13 +16,12 @@ namespace TypeScriptAngularWebApiAppHalSwagger.Controllers
         private const string EntryRouteName = "Entry";
 
         /// <summary>
-        /// Gets the <see cref="EntryModel" /> instance.
+        /// Gets the list of <see cref="SalutationModel" />s.
         /// </summary>
         /// <returns>
-        /// Returns the <see cref="EntryModel" /> instance.
+        /// Returns the list of <see cref="SalutationModel" />s.
         /// </returns>
         [Route("", Name = EntryRouteName)]
-        [SwaggerOperation("My" + EntryRouteName)]
         public virtual async Task<EntryModel> Get()
         {
             EntryModel model = null;
@@ -34,8 +30,12 @@ namespace TypeScriptAngularWebApiAppHalSwagger.Controllers
                     model = new EntryModel();
                 });
 
-            model.AddLink(new Link() { Rel = "self", Href = this.Url.Route(EntryRouteName, new { }) });
-            model.AddLinks(SalutationsController.FindLinks(this.Url).ToList());
+            model.Links.Add(new Link() { Rel = "self", Href = this.Url.Route(EntryRouteName, new { }) });
+            foreach (var link in SalutationsController.FindLinks(this.Url))
+            {
+                model.Links.Add(link);
+            }
+
             return model;
         }
     }

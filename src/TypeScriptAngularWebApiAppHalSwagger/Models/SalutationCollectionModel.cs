@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
-using Aliencube.WebApi.Hal.Resources;
+using WebApi.Hal;
 
 namespace TypeScriptAngularWebApiAppHalSwagger.Models
 {
     /// <summary>
     /// This represents the collection entity of <see cref="SalutationModel" />.
     /// </summary>
-    public class SalutationCollectionModel : LinkedResourceCollection<SalutationModel>
+    public class SalutationCollectionModel : SimpleListRepresentation<SalutationModel>
     {
         /// <summary>
         /// Initialises a new instance of the <see cref="SalutationCollectionModel" /> class.
@@ -24,8 +23,8 @@ namespace TypeScriptAngularWebApiAppHalSwagger.Models
         /// <param name="items">
         /// The items.
         /// </param>
-        public SalutationCollectionModel(IEnumerable<SalutationModel> items)
-            : base(items.ToList())
+        public SalutationCollectionModel(IList<SalutationModel> items)
+            : base(items)
         {
         }
     }

@@ -9,7 +9,7 @@ This is a sample code for an Angular App using TypeScript and Web API.
 * [x] Static Angular App with TypeScript
 * [x] Dynamic Angular App with TypeScript and Web API
 * [x] Dynamic Angular App with TypeScript and Web API applying HAL
-* [ ] Dynamic Angular App with TypeScript and Web API applying HAL and Swagger
+* [x] Dynamic Angular App with TypeScript and Web API applying HAL and Swagger
 * [ ] Dynamic Angular App with TypeScript and Web API applying HAL, Swagger, Event Sourcing and CQRS
 
 

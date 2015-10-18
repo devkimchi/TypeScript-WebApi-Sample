@@ -1,11 +1,11 @@
-﻿using Aliencube.WebApi.Hal.Resources;
+﻿using WebApi.Hal;
 
 namespace TypeScriptAngularWebApiAppHal.Models
 {
     /// <summary>
     /// This represents the model entity for entry.
     /// </summary>
-    public class EntryModel : LinkedResource
+    public class EntryModel : Representation
     {
     }
 }

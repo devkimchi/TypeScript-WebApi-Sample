@@ -1,11 +1,11 @@
-﻿using Aliencube.WebApi.Hal.Resources;
+﻿using WebApi.Hal;
 
 namespace TypeScriptAngularWebApiAppHalSwagger.Models
 {
     /// <summary>
     /// This represents the entity for salutation.
     /// </summary>
-    public class SalutationModel : LinkedResource
+    public class SalutationModel : Representation
     {
         /// <summary>
         /// Initialises a new instance of the <see cref="SalutationModel" /> class.

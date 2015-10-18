@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Web.Http;
 
-using Aliencube.WebApi.Hal.Configs;
-
 using Owin;
 
 namespace TypeScriptAngularWebApiAppHalSwagger
@@ -32,9 +30,7 @@ namespace TypeScriptAngularWebApiAppHalSwagger
 
             config.MapHttpAttributeRoutes();
 
-            config.ConfigHalFormatter();
-
-            config.ConfigSwagger();
+            config.ConfigHal();
 
             builder.UseWebApi(config);
         }
