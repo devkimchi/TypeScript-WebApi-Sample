@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Routing;
 
+using TypeScriptAngularWebApiAppHalSwagger.Helpers;
 using TypeScriptAngularWebApiAppHalSwagger.Models;
 
 using WebApi.Hal;
@@ -41,22 +42,10 @@ namespace TypeScriptAngularWebApiAppHalSwagger.Controllers
         [Route("", Name = SalutationsRouteName)]
         public virtual async Task<SalutationCollectionModel> Get()
         {
-            SalutationCollectionModel collection = null;
-            await Task.Run(() =>
-                {
-                    var salutations = new List<SalutationModel>()
-                                          {
-                                              new SalutationModel("Mr", "Mr"),
-                                              new SalutationModel("Mrs", "Mrs"),
-                                              new SalutationModel("Ms", "Ms"),
-                                              new SalutationModel("Mx", "Mx"),
-                                          };
-
-                    collection = new SalutationCollectionModel(salutations);
-                });
-
+            var salutations = SalutationHelper.GetSalutations();
+            var collection = new SalutationCollectionModel(salutations);
             collection.Links.Add(new Link() { Rel = "self", Href = this.Url.Route(SalutationsRouteName, new { }) });
-            return collection;
+            return await Task.FromResult(collection);
         }
     }
 }

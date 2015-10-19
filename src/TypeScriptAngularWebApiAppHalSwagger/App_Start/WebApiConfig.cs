@@ -32,6 +32,8 @@ namespace TypeScriptAngularWebApiAppHalSwagger
 
             config.ConfigHal();
 
+            config.ConfigSwagger();
+
             builder.UseWebApi(config);
         }
     }
