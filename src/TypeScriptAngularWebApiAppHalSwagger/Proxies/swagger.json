@@ -1,0 +1,213 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "TypeScriptAngularWebApiAppHalSwagger"
+  },
+  "host": "localhost:3884",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api": {
+      "get": {
+        "tags": [
+          "Entry"
+        ],
+        "summary": "Gets the list of {TypeScriptAngularWebApiAppHalSwagger.Models.SalutationModel}s.",
+        "operationId": "Entry_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/hal+json",
+          "application/hal+xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/EntryModel"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/salutations": {
+      "get": {
+        "tags": [
+          "Salutations"
+        ],
+        "summary": "Gets the list of {TypeScriptAngularWebApiAppHalSwagger.Models.SalutationModel}s.",
+        "operationId": "Salutations_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml",
+          "application/hal+json",
+          "application/hal+xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SalutationCollectionModel"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "EntryModel": {
+      "description": "This represents the model entity for entry.",
+      "type": "object",
+      "properties": {
+        "_links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "_embedded": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EmbeddedResource"
+          }
+        }
+      }
+    },
+    "Link": {
+      "type": "object",
+      "properties": {
+        "Curie": {
+          "$ref": "#/definitions/CuriesLink",
+          "readOnly": true
+        },
+        "Rel": {
+          "type": "string"
+        },
+        "Href": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Deprecation": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Profile": {
+          "type": "string"
+        },
+        "HrefLang": {
+          "type": "string"
+        },
+        "IsTemplated": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      }
+    },
+    "EmbeddedResource": {
+      "type": "object",
+      "properties": {
+        "IsSourceAnArray": {
+          "type": "boolean"
+        },
+        "Resources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IResource"
+          },
+          "readOnly": true
+        }
+      }
+    },
+    "CuriesLink": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "Href": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "IResource": {
+      "type": "object",
+      "properties": {
+        "_links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        }
+      }
+    },
+    "SalutationCollectionModel": {
+      "description": "This represents the collection entity of {TypeScriptAngularWebApiAppHalSwagger.Models.SalutationModel}.",
+      "type": "object",
+      "properties": {
+        "ResourceList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SalutationModel"
+          }
+        },
+        "_links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "_embedded": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EmbeddedResource"
+          }
+        }
+      }
+    },
+    "SalutationModel": {
+      "description": "This represents the entity for salutation.",
+      "type": "object",
+      "properties": {
+        "Text": {
+          "description": "Gets or sets the salutation text.",
+          "type": "string"
+        },
+        "Value": {
+          "description": "Gets or sets the salutation value.",
+          "type": "string"
+        },
+        "_links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "_embedded": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EmbeddedResource"
+          }
+        }
+      }
+    }
+  }
+}

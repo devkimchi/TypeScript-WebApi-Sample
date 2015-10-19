@@ -51,6 +51,10 @@
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.1.3.0\lib\net45\Microsoft.Rest.ClientRuntime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -130,6 +134,8 @@
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Proxies\swagger.json" />
+    <Content Include="Proxies\build.bat" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -152,6 +158,22 @@
     <Compile Include="Models\SalutationCollectionModel.cs" />
     <Compile Include="Models\SalutationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxies\Entry.cs" />
+    <Compile Include="Proxies\EntryExtensions.cs" />
+    <Compile Include="Proxies\IEntry.cs" />
+    <Compile Include="Proxies\ISalutations.cs" />
+    <Compile Include="Proxies\ITypeScriptAngularWebApiAppHalSwaggerClient.cs" />
+    <Compile Include="Proxies\Models\CuriesLink.cs" />
+    <Compile Include="Proxies\Models\EmbeddedResource.cs" />
+    <Compile Include="Proxies\Models\EntryModel.cs" />
+    <Compile Include="Proxies\Models\IResource.cs" />
+    <Compile Include="Proxies\Models\Link.cs" />
+    <Compile Include="Proxies\Models\SalutationCollectionModel.cs" />
+    <Compile Include="Proxies\Models\SalutationModel.cs" />
+    <Compile Include="Proxies\Salutations.cs" />
+    <Compile Include="Proxies\SalutationsExtensions.cs" />
+    <Compile Include="Proxies\TypeScriptAngularWebApiAppHalSwaggerClient.cs" />
+    <Compile Include="Proxies\TypeScriptAngularWebApiAppHalSwaggerClientExtensions.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
