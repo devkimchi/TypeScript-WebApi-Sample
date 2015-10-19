@@ -5,23 +5,21 @@
 "use strict";
 
 module app.angular.Directives {
-    import RegiastrationModel = angular.Models.RegistrationModel;
+    import RegistrationModel = angular.Models.RegistrationModel;
 
     export interface IMainContentScope extends ng.IScope {
-        model: angular.Models.RegistrationModel;
+        model: RegistrationModel;
     }
 
     export class MainContent implements ng.IDirective {
         replace = true;
         restrict = "EA";
-        scope = {
-            model: new angular.Models.RegistrationModel()
-        };
+        scope = {};
         templateUrl = "/App/components/mainContent/mainContent.html";
 
         controller($scope: IMainContentScope, salutationsFactory: angular.Factories.SalutationsFactory) {
             salutationsFactory.getResponse()
-                .success((model: angular.Models.RegistrationModel) => {
+                .success((model: RegistrationModel) => {
                     $scope.model = model;
                 });
         }

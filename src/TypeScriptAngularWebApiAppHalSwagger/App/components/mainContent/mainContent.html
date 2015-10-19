@@ -2,7 +2,7 @@
     <li>
         Title:
         <select id="salutation" name="salutation">
-            <option ng-repeat="salutation in model._embedded" value="{{salutation.value}}">{{salutation.text}}</option>
+            <option ng-repeat="salutation in model._embedded.salutations" value="{{salutation.value}}">{{salutation.text}}</option>
         </select>
     </li>
     <li>

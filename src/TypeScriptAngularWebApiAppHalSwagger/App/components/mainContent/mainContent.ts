@@ -8,7 +8,7 @@ module app.angular.Directives {
     import RegistrationModel = angular.Models.RegistrationModel;
 
     export interface IMainContentScope extends ng.IScope {
-        model: angular.Models.RegistrationModel;
+        model: RegistrationModel;
     }
 
     export class MainContent implements ng.IDirective {
@@ -19,7 +19,7 @@ module app.angular.Directives {
 
         controller($scope: IMainContentScope, salutationsFactory: angular.Factories.SalutationsFactory) {
             salutationsFactory.getResponse()
-                .success((model: angular.Models.RegistrationModel) => {
+                .success((model: RegistrationModel) => {
                     $scope.model = model;
                 });
         }

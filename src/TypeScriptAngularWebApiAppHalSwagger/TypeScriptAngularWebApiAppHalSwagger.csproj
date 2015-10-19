@@ -122,6 +122,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\components\mainContent\mainContent.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -141,7 +142,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\components\mainContent\mainContent.html" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>

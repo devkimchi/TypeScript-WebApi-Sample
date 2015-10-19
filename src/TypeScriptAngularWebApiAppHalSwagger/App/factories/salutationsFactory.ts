@@ -10,7 +10,9 @@ module app.angular.Factories {
         }
 
         getResponse(): ng.IHttpPromise<angular.Models.RegistrationModel> {
-            return this.$http.get<angular.Models.RegistrationModel>(this._baseUrl);
+            return this.$http.get<angular.Models.RegistrationModel>(this._baseUrl, {
+                headers: { "Accept": "application/hal+json" }
+            });
         }
     }
 }
