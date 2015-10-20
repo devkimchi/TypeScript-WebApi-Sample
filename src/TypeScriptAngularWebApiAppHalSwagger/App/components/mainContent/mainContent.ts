@@ -21,6 +21,7 @@ module app.angular.Directives {
             salutationsFactory.getResponse()
                 .success((model: RegistrationModel) => {
                     $scope.model = model;
+                    console.log($scope.model);
                 });
         }
     }

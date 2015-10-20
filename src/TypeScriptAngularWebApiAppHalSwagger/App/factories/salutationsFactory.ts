@@ -4,15 +4,13 @@
 
 module app.angular.Factories {
     export class SalutationsFactory {
-        private _baseUrl: string = "/api/salutations";
+        private _baseUrl: string = "/home";
 
         constructor(private $http: ng.IHttpService) {
         }
 
         getResponse(): ng.IHttpPromise<angular.Models.RegistrationModel> {
-            return this.$http.get<angular.Models.RegistrationModel>(this._baseUrl, {
-                headers: { "Accept": "application/hal+json" }
-            });
+            return this.$http.get<angular.Models.RegistrationModel>(this._baseUrl);
         }
     }
 }

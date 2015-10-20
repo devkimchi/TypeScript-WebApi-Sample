@@ -25,7 +25,9 @@ namespace TypeScriptAngularWebApiAppHalSwagger
                 throw new ArgumentNullException("appBuilder");
             }
 
-            WebApiConfig.Configure(appBuilder);
+            var container = DependencyConfig.Configure();
+
+            WebApiConfig.Configure(appBuilder, container);
         }
     }
 }

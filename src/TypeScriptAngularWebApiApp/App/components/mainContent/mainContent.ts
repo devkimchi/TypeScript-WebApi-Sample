@@ -23,6 +23,7 @@ module app.angular.Directives {
             salutationsFactory.getResponse()
                 .success((salutations: Array<angular.Models.Salutation>) => {
                     $scope.model.salutations = salutations;
+                    console.log($scope.model);
                 });
         }
     }
